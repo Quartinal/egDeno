@@ -12,7 +12,9 @@ interface Item {
 
 const characters: Item[] = [
     { characterN: 1, character: "sheep", class: "animals" },
-    { characterN: 2, character: "cow", class: "animals" }
+    { characterN: 2, character: "cow", class: "animals" },
+    { characterN: 3, character: "donkey", class: "animals" },
+    { characterN: 4, character: "rabbit", class: "animals" }
 ]
 
 router.get("/items/:characterN", (context) => {
