@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visits</title>
+</head>
+<body>
+  <h1>Visits</h1>
+  <ul id="visits">
+  </ul>
+  <script>
+    async function loadVisits() {
+      const response = await fetch('/most_recent_url.txt');
+      const visitsText = await response.text();
+      const visits = visitsText.split("\n");
+      const visitsList = document.getElementById('visits');
+      visits.forEach(visit => {
+        const li = document.createElement('li');
+        li.textContent = visit;
+        visitsList.appendChild(li);
+      });
+    }
+    loadVisits();
+  </script>
+</body>
+</html>
